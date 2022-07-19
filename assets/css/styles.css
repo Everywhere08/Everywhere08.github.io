@@ -271,13 +271,14 @@ img {
 
 /*==================== HOME ====================*/
 .home__container{
-  padding: 100px 0 0;
+  padding: 0;
 }
 
 .home__content{
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 0;
+  border: 0;
 }
 
 .imgslide{
