@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--==================== UNICONS ====================-->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        
+        <!--==================== CSS ====================-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Responsive Portfolio Website</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Company</a>
+
+                <div class="nav__menu " id="nav-menu" >
+                    <ul class="nav__list grid">
+                        <li class="nav__item right-menu" >
+                            <a href="#about" class="nav__link" >
+                                <i class="uil uil-user nav__icon menu-button" ></i> ABOUT
+                                <div class="dropdown-menu">
+                                    <a href="#">HISTORY</a>
+                                    <a href="#">VISSION MISSION</a>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#ourwork" class="nav__link">
+                                <i class="uil uil-bag nav__icon"></i> OUR WORK
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#ourteam" class="nav__link">
+                                <i class="uil uil-users-alt nav__icon"></i> OUR TEAM
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">
+                                <i class="uil uil-chat-bubble-user nav__icon"></i> CONTACT
+                            </a>
+                        </li>
+                    </ul>
+                    <i class="uil uil-times nav__close" id="nav-close"></i>
+                </div>
+                <div class="nav__btns">
+                    <i class="uil uil-moon change-theme" id="theme-button"></i>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-apps"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div class="home__content grid">
+                        <div class="imgslide fade">
+                        <img src="assets/img/bg.jpg" width="762px" height="545" class="portfolio__img">
+                        <div class="bottomleft">THIS IS A PLACE WHERE TECHNOLOGY & CREATIVITY FUSED INTO DIGITAL CHEMISTRY</div>
+                        </div>
+                        <div class="imgslide fade">
+                        <img src="assets/img/about-bg.jpg" alt="" class="portfolio__img">
+                        <div class="bottomleft">WE DON'T HAVE THE BEST BUT WE HAVE THE GREATEST TEAM</div>
+                        </div>
+                        <a class="prev" onclick="nextslide(-1)">&#10094;
+                        </a>
+                        <a class="next" onclick="nextslide(1)">&#10095;
+                        </a>
+                        <div class="page">
+                            <span class="dot" onclick="dotslide(1)"></span>
+                            <span class="dot" onclick="dotslide(2)"></span>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                  var slideIndex = 1;
+            showSlide(slideIndex);
+
+        function nextslide(n){
+            showSlide(slideIndex += n);
+        }
+
+        function dotslide(n){
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("imgslide");
+            var dot = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                
+                dot[i].className = dot[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            dot[slideIndex - 1].className += " active";
+            
+
+
+        }
+
+                </script>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <h2 class="ourvalues__title">OUR VALUES</h2>
+
+                <div class="about__container container grid">
+                    <div class="about__content">
+                        <i class="uil uil-caret-right arrow__right"></i>
+                       `<i class="uil uil-lightbulb-alt about__icon"></i>
+                        <h3 class="about__title">INNOVATIVE</h3>
+                        <div class="about__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan odio eget mi ultrices, et ultrices mauris egestas. In nec tincidunt augue.</p>
+                    </div>
+                    </div>
+                    <div class="about__content2">
+                        <i class="uil uil-caret-right arrow__right2"></i>
+                        <i class="uil uil-university about__icon"></i>
+                        <h3 class="about__title">LOYALTY</h3>
+                        <div class="about__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan odio eget mi ultrices, et ultrices mauris egestas. In nec tincidunt augue.</p>
+                    </div>
+                    </div>
+                    <div class="about__content3">
+                        <i class="uil uil-balance-scale about__icon"></i>
+                        <h3 class="about__title">RESPECT</h3>
+                        <div class="about__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan odio eget mi ultrices, et ultrices mauris egestas. In nec tincidunt augue.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <!--==================== CONTACT ME ====================-->
+            <section class="contact section" id="contact">
+                <h2 class="ourvalues__title">CONTACT US</h2>
+
+                <form action="" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="username" class="contact__label">Name</label>
+                            <input id="username" name="username" type="text" class="contact__input" required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="contact__content">
+                            <label for="email" class="contact__label">Email:</label>
+                            <input type="email" id="email" name="email" class="contact__input" required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Message</label>
+                            <textarea name="" id="" cols="0" rows="7" class="contact__input" required></textarea>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="button">SUBMIT</button>
+                </form>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="footer__bg">
+                <div>
+                    <p class="footer__copy">Copyright &#169; 2016,PT Company </p>
+                </div>
+                <div class="footer__container grid">
+                    <div class="footer__socials">
+                        <a href="https://facebook.com/" class="footer__social">
+                            <i class="uil uil-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" class="footer__social">
+                        <i class="uil uil-twitter"></i>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--==================== MAIN JS ====================-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
